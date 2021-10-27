@@ -14,18 +14,19 @@ class Server {
         this.app = express();
         this.port = process.env.PORT || '4000';
 
+        this.middlewares();
         this.routes();
     }
 
     middlewares() {
         // CORS
-        this.app.use(cors())
+        this.app.use(cors());
 
         // body reading
-        this.app.use(express.json())
+        this.app.use(express.json());
 
         // static files
-        this.app.use(express.static('public'))
+        this.app.use(express.static('src/public'));
     }
 
     routes() {
