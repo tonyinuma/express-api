@@ -21,6 +21,8 @@ class Server {
         // CORS
         this.app.use(cors())
 
+        // body reading
+        this.app.use(express.json())
     }
 
     routes() {
