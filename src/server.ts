@@ -23,6 +23,9 @@ class Server {
 
         // body reading
         this.app.use(express.json())
+
+        // static files
+        this.app.use(express.static('public'))
     }
 
     routes() {
